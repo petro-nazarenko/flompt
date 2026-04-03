@@ -15,7 +15,7 @@
 
   "accessibility": {
     "skipToMain": "Skip to main content",
-    "switchLocale": "Passer en français",
+    "switchLocale": "Switch language",
     "inputPanel": "Input panel",
     "outputPanel": "Output panel",
     "mainTabs": "Main tabs"

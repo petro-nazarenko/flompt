@@ -255,6 +255,14 @@ body {
   box-shadow: 0 0 0 3px var(--accent-glow);
 }
 
+.prompt-char-count {
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  margin-top: -4px;
+}
+
 .error-msg {
   font-size: 0.72rem;
   color: var(--error);
