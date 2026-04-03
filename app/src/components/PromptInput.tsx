@@ -168,7 +168,7 @@ const PromptInput = () => {
       </div>
       {rawPrompt.length > 0 && (
         <div className="prompt-char-count" aria-live="polite" aria-atomic="true">
-          {rawPrompt.length} {t.block.chars}
+          {rawPrompt.length} {t.promptInput.chars}
         </div>
       )}
 
