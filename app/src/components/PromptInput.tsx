@@ -16,7 +16,7 @@ const PromptInput = () => {
     setNodes, setEdges,
     setIsDecomposing, isDecomposing,
     setActiveTab,
-    setQueueStatus,
+    setQueueStatus, queueStatus,
     setCompiledPrompt,
   } = useFlowStore()
   const { t } = useLocale()
@@ -166,6 +166,26 @@ const PromptInput = () => {
           </button>
         )}
       </div>
+      {rawPrompt.length > 0 && (
+        <div className="prompt-char-count" aria-live="polite" aria-atomic="true">
+          {rawPrompt.length} {t.promptInput.chars}
+        </div>
+      )}
+
+      {isDecomposing && queueStatus && (
+        <div
+          className={`queue-status${queueStatus.status === 'processing' ? ' queue-status--processing' : ''}`}
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          <span className="queue-status__dot" aria-hidden="true" />
+          {queueStatus.status === 'processing' || queueStatus.position === 0
+            ? t.promptInput.queueProcessing
+            : t.promptInput.queuePosition(queueStatus.position)
+          }
+        </div>
+      )}
 
       {error && (
         <p id="prompt-error-msg" className="error-msg" role="alert" aria-live="assertive">
